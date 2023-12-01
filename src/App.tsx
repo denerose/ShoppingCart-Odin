@@ -7,9 +7,10 @@ export const ShopContext = createContext({})
 
 function App() {
   const [count, setCount] = useState(0)
+  const [cartItems, setCartItems] = useState([])
 
   return (
-    <ShopContext.Provider value={{ count, setCount }}>
+    <ShopContext.Provider value={{ count, setCount, cartItems, setCartItems }}>
       <div className='w3-cell'>
         < Navbar />
         <div className="w3-container w3-padding-48 w3-margin-top">

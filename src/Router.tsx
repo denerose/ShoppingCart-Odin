@@ -4,6 +4,7 @@ import ErrorPage from "./ErrorPage";
 import { Shop } from "./Shop";
 import { Home } from "./Home";
 import { Wares } from "./Wares";
+import { Cart } from "./Cart";
 
 export const Router = () => {
     const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const Router = () => {
                         {
                             index: true,
                             element: <Wares />
+                        },
+                        {
+                            path: "cart",
+                            element: <Cart />
                         }
                     ]
                 },

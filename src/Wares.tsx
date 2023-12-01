@@ -5,13 +5,13 @@ const testWares = [
         name: 'Draught of Strength',
         img: 'https://images.uesp.net/4/41/SR-icon-potion-StrengthDraught.png',
         desc: 'Carrying capacity increases by 30 for 300 seconds',
-        key: '001'
+        itemkey: '001'
     },
     {
         name: 'Solution of Regeneration',
         img: 'https://images.uesp.net/a/a2/SR-icon-potion-RegenerationSolution.png',
         desc: 'Health regenerates 70% faster for 300 seconds',
-        key: '002'
+        itemkey: '002'
     }
 ]
 
@@ -24,6 +24,8 @@ export function Wares() {
                     img={e.img}
                     name={e.name}
                     desc={e.desc}
+                    itemkey={e.itemkey}
+                    key={crypto.randomUUID()}
                 />
             ))}
         </div>

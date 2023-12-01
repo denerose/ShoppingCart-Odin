@@ -9,8 +9,8 @@ export function ProductCard(props) {
             <img src={props.img} alt="image of product" className='w3-image' />
             <h3>{props.name}</h3>
             <p>{props.desc}</p>
-            <AddMe />
-        </div>
+            <AddMe item={{ itemkey: props.itemkey, name: props.name, img: props.img }} />
+        </div >
     )
 }
 
@@ -18,13 +18,18 @@ ProductCard.propTypes = {
     img: PropTypes.string,
     name: PropTypes.string,
     desc: PropTypes.string,
-    key: PropTypes.string,
+    itemkey: PropTypes.string,
 }
 
-function AddMe() {
-    const { count, setCount } = useContext(ShopContext)
+function AddMe({ item }: { item: object }) {
+    const { cartItems, setCartItems } = useContext(ShopContext)
 
     return (
-        <button onClick={() => { setCount((count) => count + 1) }}>BUTTON</button>
+        <button onClick={() => {
+            setCartItems([
+                ...cartItems,
+                { item }
+            ]);
+        }}>BUTTON</button>
     )
 }
