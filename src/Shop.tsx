@@ -1,12 +1,11 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export function Shop() {
 
     return (
-        <div className="w3-container">
-            <h2>This will be the shop page</h2>
+        <div>
+            <h1>This will be the shop page</h1>
             <Outlet />
-            <Link to="/">HOME</Link>
         </div>
     )
 }

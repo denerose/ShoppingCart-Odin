@@ -9,7 +9,6 @@ function App() {
     <div className='w3-cell'>
       < Navbar count={count} />
       <div className="w3-container w3-padding-48 w3-margin-top">
-        <h1 className='w3-margin-top'>Khajiit has wares...</h1>
         <Outlet />
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
