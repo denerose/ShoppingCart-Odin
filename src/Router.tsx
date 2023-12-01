@@ -3,6 +3,7 @@ import App from "./App";
 import ErrorPage from "./ErrorPage";
 import { Shop } from "./Shop";
 import { Home } from "./Home";
+import { Wares } from "./Wares";
 
 export const Router = () => {
     const router = createBrowserRouter([
@@ -18,6 +19,12 @@ export const Router = () => {
                 {
                     path: "shop",
                     element: <Shop />,
+                    children: [
+                        {
+                            index: true,
+                            element: <Wares />
+                        }
+                    ]
                 },
             ]
         },
