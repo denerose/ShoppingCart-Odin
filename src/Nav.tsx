@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { ShopContext } from "./App";
 
-export function Navbar({ count }: { count: number }) {
+export function Navbar() {
+    const count = useContext(ShopContext) as number
+
     return (
         <nav className="w3-top">
             <div className="w3-bar w3-black w3-card">
