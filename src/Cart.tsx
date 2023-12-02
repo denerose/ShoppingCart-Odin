@@ -6,7 +6,9 @@ type Product = {
     name: string,
     desc: string,
     img: string,
-    itemkey: string
+    price: number,
+    itemkey: string,
+    uid: string
 }
 
 export function Cart() {
@@ -19,6 +21,7 @@ export function Cart() {
                 {cartItems.map((item: Product) => (
                     <CartListItem
                         name={item.name}
+                        uid={item.uid}
                         key={crypto.randomUUID()}
                     />
                 )
@@ -37,11 +40,20 @@ export function CartIcon() {
 }
 
 function CartListItem(props) {
+    const { cartItems, setCartItems } = useContext(ShopContext)
 
     return (
         <li className='w3-bar'>
             <span>{props.name}</span>
+            <span onClick={() => removeCartItem(props.uid, cartItems, setCartItems)} className="w3-bar-item w3-button w3-xlarge w3-right">&times;</span>
         </li>
     )
+}
+
+function removeCartItem(keyToRemove: string, cartItems: Product[], setCartItems) {
+
+    const newList = cartItems.filter((item: Product) => item.uid !== keyToRemove)
+    console.log(newList)
+    setCartItems(newList)
 }
 
