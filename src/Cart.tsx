@@ -18,7 +18,7 @@ export function Cart() {
             <ul className='w3-ul'>
                 {cartItems.map((item: Product) => (
                     <CartListItem
-                        props={item}
+                        name={item.name}
                         key={crypto.randomUUID()}
                     />
                 )

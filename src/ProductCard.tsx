@@ -28,7 +28,7 @@ function AddMe({ item }: { item: object }) {
         <button onClick={() => {
             setCartItems([
                 ...cartItems,
-                { item }
+                item
             ]);
         }}>BUTTON</button>
     )
